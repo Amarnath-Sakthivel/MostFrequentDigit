@@ -4,15 +4,17 @@ import java.util.*;
 
 class MostFrequenrDigit {
     static int MostFrequenrDigit(int input1,int input2,int input3,int input4) {
+        //Convert Int to String
         String s1=Integer.toString(input1);
         String s2=Integer.toString(input2);
         String s3=Integer.toString(input3);
         String s4=Integer.toString(input4);
+        //append string
         String apend=s1.concat(s2);
         apend=apend.concat(s3);
         apend=apend.concat(s4);
-        System.out.println(apend);
-
+        
+        //logic to find *Most Frequent Digit*
         int temp=1;
         HashSet<Integer> arr=new HashSet<>();
         for(int i=0;i<apend.length();i++){
@@ -22,11 +24,11 @@ class MostFrequenrDigit {
                     count++;
             }if(count>=temp) {
                 temp = count;
-                arr.add(Character.getNumericValue(apend.charAt(i)));
+                arr.add(Character.getNumericValue(apend.charAt(i))); //get Numeric values
 
             }
         }
-        System.out.println(arr);
+       
         System.out.println(Collections.max(arr));
         return 0;
     }
